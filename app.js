@@ -7,7 +7,7 @@
 var express = require('express');
 var app = express();
 
-var port = process.env.port || 3000;
+var port = process.env.PORT || 3000;
 
 app.use(express.static('public'));
 app.set('views', 'src/views');
@@ -15,8 +15,6 @@ app.set('view engine', 'ejs')
 
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://vishalgcogni:river808@ds127988.mlab.com:27988/booksapi');
-
-
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
